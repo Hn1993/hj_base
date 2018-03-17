@@ -6,14 +6,17 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 
 import com.eiga.R;
+import com.eiga.base.BaseActivity;
 import com.eiga.ui.fragment.MainFragment;
 import com.eiga.ui.fragment.MyCenterFragment;
+import com.eiga.utils.AndroidWorkaround;
 import com.eiga.view.NoScrollViewPager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.albert.autosystembar.SystemBarHelper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.main_vp)
     NoScrollViewPager mainVp;
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        autoVirtualKeys();//华为等底部虚拟按键的手机
         ButterKnife.bind(this);
 
         findViews();
@@ -42,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         return new MainFragment();
                     case 1:
+                        return new MainFragment();
+                    case 2:
+                        return new MainFragment();
+                    case 3:
                         return new MyCenterFragment();
                 }
                 return new MainFragment();

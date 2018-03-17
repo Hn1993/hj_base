@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 import com.eiga.R;
 
+import cn.albert.autosystembar.SystemBarHelper;
+
 
 public class MainFragment extends Fragment {
 
@@ -18,6 +20,11 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (mRootView==null){
             mRootView=inflater.inflate(R.layout.fragment_main,null);
+            new SystemBarHelper.Builder()
+                    .enableImmersedStatusBar(true)
+                    .enableImmersedNavigationBar(true)
+                    .into(getActivity());
+
         }
 
         return mRootView;

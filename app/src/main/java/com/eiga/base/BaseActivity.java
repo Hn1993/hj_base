@@ -43,13 +43,16 @@ public class BaseActivity extends AutoLayoutActivity {
 //        }
 //    }
 
+    public void autoVirtualKeys(){
+        if (AndroidWorkaround.checkDeviceHasNavigationBar(this)) {
+            AndroidWorkaround.assistActivity(findViewById(android.R.id.content));
+        }
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         queue = NoHttp.newRequestQueue();
-        if (AndroidWorkaround.checkDeviceHasNavigationBar(this)) {
-            AndroidWorkaround.assistActivity(findViewById(android.R.id.content));
-        }
+
     }
 }
