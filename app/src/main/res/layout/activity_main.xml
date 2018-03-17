@@ -21,7 +21,7 @@
         app:tabIndicatorHeight="0dp"
         app:tabSelectedTextColor="#ee3333"
         app:tabTextColor="@color/black"
-        android:layout_height="56dp"
+        android:layout_height="@dimen/base_actionbar_height"
         >
     </android.support.design.widget.TabLayout>
 </LinearLayout>

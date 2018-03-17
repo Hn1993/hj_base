@@ -25,9 +25,14 @@ public class MainFragment extends Fragment {
                     .enableImmersedNavigationBar(true)
                     .into(getActivity());
 
+            findViews();
         }
-
         return mRootView;
+
+    }
+
+
+    private void findViews() {
 
     }
 }

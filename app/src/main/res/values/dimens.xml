@@ -1,0 +1,5 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="base_actionbar_height">160px</dimen>
+
+</resources>
